@@ -1,0 +1,28 @@
+spring:
+    h2:
+        console:
+            enabled: true
+            path: /h2-console
+    jpa:
+        hibernate:
+            ddl-auto: update
+    #      ddl-auto: none
+    #      ddl-auto: create-drop
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        hikari:
+            minimumIdle: 50
+            maximumPoolSize: 200
+            idleTimeout: 900000
+            # 900000 = 15 min
+            poolName: HikariCP
+            maxLifetime: 1800000
+            # 1800000 = 30 min
+            connectionTimeout: 10000
+            # 10000 = 10 sec
+            registerMbeans: true
+        driver-class-name: org.h2.Driver
+        url: jdbc:h2:mem:test
+        username: user
+        password:
+        initialization-mode: always
